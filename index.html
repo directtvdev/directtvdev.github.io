@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Sign in to your DIRECTV account to manage your subscription, view bills, update account details, and access streaming services securely.">
+    <meta name="keywords" content="DIRECTV login, DIRECTV account login, sign in DIRECTV, DIRECTV account, DIRECTV customer login, DIRECTV streaming login, manage DIRECTV account">
+    <meta name="author" content="DIRECTV Help Center" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="How to Log in to a DIRECTV Account?" />
+    <meta property="og:description" content="Complete guide to logging into your DIRECTV account on any device. Easy steps, troubleshooting, and FAQs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://directv-help.example.com/login-guide" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How to Log in to a DIRECTV Account?" />
+    <meta name="twitter:description" content="Step-by-step DIRECTV login guide for Firestick, web, and mobile. Troubleshooting tips included." />
+    <link rel="canonical" href="https://directv-help.example.com/login-guide" />
+    <title>How to Log in to a DIRECTV Account? – Complete Guide</title>
+
+    <style>
+        /* ----- RESET & BASE ----- */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+            background: #f4f8fe;
+            color: #1a2a3a;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ----- CONTAINER ----- */
+        .site-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.06);
+            border-radius: 0 0 24px 24px;
+            overflow: hidden;
+        }
+
+        /* ----- HEADER / NAV ----- */
+        .header {
+            background: linear-gradient(135deg, #002b5c, #004080);
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 43, 92, 0.3);
+            min-height: 74px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 0;
+        }
+
+        .logo-icon {
+            font-size: 30px;
+            line-height: 1;
+            animation: pulse-logo 2.4s ease-in-out infinite;
+        }
+
+        @keyframes pulse-logo {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            letter-spacing: -0.5px;
+        }
+        .logo-text span {
+            color: #ffb347;
+        }
+
+        /* ---- NAV LINKS (desktop) ---- */
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links li a {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.25s ease;
+            position: relative;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #ffb347;
+            border-radius: 10px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .nav-links li a:hover::after {
+            width: 60%;
+        }
+
+        .nav-links li a.btn-login-nav {
+            background: #ffb347;
+            color: #002b5c;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(255, 179, 71, 0.35);
+        }
+
+        .nav-links li a.btn-login-nav:hover {
+            background: #ffa726;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 179, 71, 0.45);
+        }
+
+        .nav-links li a.btn-login-nav::after {
+            display: none;
+        }
+
+        /* ---- HAMBURGER (mobile) ---- */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px 6px;
+            border-radius: 8px;
+            transition: background 0.2s;
+            background: transparent;
+            border: none;
+        }
+
+        .hamburger:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 3.5px;
+            background: #ffffff;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ----- HERO ----- */
+        .hero {
+            background: linear-gradient(135deg, #eaf3fc, #d4e5f7);
+            padding: 50px 30px 40px;
+            text-align: center;
+            border-bottom: 1px solid #c5d9ed;
+            animation: fadeSlide 0.9s ease-out;
+        }
+
+        @keyframes fadeSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #002b5c;
+            margin-bottom: 14px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 span {
+            color: #e67e22;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #1f3a57;
+            max-width: 760px;
+            margin: 0 auto 22px;
+        }
+
+        .hero .btn-primary {
+            display: inline-block;
+            background: #002b5c;
+            color: #fff;
+            padding: 16px 48px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(0, 43, 92, 0.25);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hero .btn-primary:hover {
+            background: #003f7a;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 14px 32px rgba(0, 43, 92, 0.35);
+        }
+
+        /* ----- CONTENT ----- */
+        .content {
+            padding: 40px 30px 30px;
+        }
+
+        .content h2 {
+            font-size: 28px;
+            color: #002b5c;
+            margin: 40px 0 16px;
+            border-left: 6px solid #ffb347;
+            padding-left: 18px;
+        }
+
+        .content h2:first-of-type {
+            margin-top: 0;
+        }
+
+        .content h3 {
+            font-size: 22px;
+            color: #003f7a;
+            margin: 28px 0 12px;
+        }
+
+        .content p {
+            font-size: 17px;
+            color: #1e2f3f;
+            margin-bottom: 18px;
+        }
+
+        .content ul,
+        .content ol {
+            padding-left: 28px;
+            margin-bottom: 22px;
+            color: #1e2f3f;
+        }
+
+        .content ul li,
+        .content ol li {
+            margin-bottom: 10px;
+            font-size: 16.5px;
+        }
+
+        .content .highlight-box {
+            background: #f0f8ff;
+            border-left: 5px solid #ffb347;
+            padding: 20px 26px;
+            border-radius: 12px;
+            margin: 28px 0;
+            box-shadow: 0 2px 12px rgba(0, 43, 92, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .content .highlight-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 43, 92, 0.10);
+        }
+
+        .content .highlight-box strong {
+            color: #002b5c;
+        }
+
+        .step-card {
+            background: #ffffff;
+            border: 1px solid #dce8f5;
+            border-radius: 16px;
+            padding: 22px 26px;
+            margin-bottom: 18px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+            transition: all 0.3s ease;
+        }
+
+        .step-card:hover {
+            border-color: #ffb347;
+            box-shadow: 0 8px 24px rgba(0, 43, 92, 0.08);
+            transform: translateY(-3px);
+        }
+
+        .step-card .step-num {
+            display: inline-block;
+            background: #002b5c;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            font-weight: 700;
+            font-size: 15px;
+            margin-right: 12px;
+        }
+
+        .step-card h4 {
+            display: inline;
+            font-size: 19px;
+            color: #002b5c;
+        }
+
+        .step-card p {
+            margin-top: 10px;
+            margin-bottom: 0;
+            padding-left: 48px;
+        }
+
+        /* ----- FAQ / ACCORDION (animated) ----- */
+        .faq-item {
+            border-bottom: 1px solid #dce8f5;
+            padding: 14px 0;
+            transition: background 0.2s;
+        }
+
+        .faq-item:hover {
+            background: #fafdff;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 18px;
+            color: #002b5c;
+            padding: 4px 0;
+            user-select: none;
+        }
+
+        .faq-question .arrow {
+            transition: transform 0.35s ease;
+            font-size: 22px;
+            color: #ffb347;
+        }
+
+        .faq-question.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.45s ease, padding 0.3s ease;
+            padding: 0 4px;
+            color: #1e2f3f;
+        }
+
+        .faq-answer.open {
+            max-height: 300px;
+            padding: 12px 4px 4px;
+        }
+
+        /* ----- FOOTER ----- */
+        .footer {
+            background: #002b5c;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 40px 30px 28px;
+            margin-top: 20px;
+            border-radius: 24px 24px 0 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer h4 {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 0.3px;
+        }
+
+        .footer p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links li a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 15px;
+            transition: color 0.25s, padding-left 0.25s;
+            display: inline-block;
+        }
+
+        .footer-links li a:hover {
+            color: #ffb347;
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            margin-top: 32px;
+            padding-top: 22px;
+            text-align: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .footer-bottom .legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px 28px;
+            margin-top: 8px;
+        }
+
+        .footer-bottom .legal-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-bottom .legal-links a:hover {
+            color: #ffb347;
+        }
+
+        /* ----- RESPONSIVE (mobile-first) ----- */
+        @media (max-width: 820px) {
+            .header {
+                padding: 0 16px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #002b5c;
+                padding: 18px 12px 26px;
+                border-radius: 0 0 20px 20px;
+                gap: 6px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+                animation: slideDown 0.35s ease;
+            }
+
+            @keyframes slideDown {
+                0% {
+                    opacity: 0;
+                    transform: translateY(-12px);
+                }
+                100% {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li a {
+                padding: 12px 18px;
+                width: 100%;
+                text-align: center;
+                font-size: 16px;
+                border-radius: 12px;
+            }
+
+            .nav-links li a.btn-login-nav {
+                background: #ffb347;
+                color: #002b5c;
+                margin-top: 4px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 28px 16px 20px;
+            }
+            .content h2 {
+                font-size: 24px;
+            }
+            .content h3 {
+                font-size: 20px;
+            }
+
+            .step-card p {
+                padding-left: 0;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .footer {
+                padding: 30px 18px 22px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 20px;
+            }
+            .logo-icon {
+                font-size: 26px;
+            }
+            .hero {
+                padding: 32px 16px 28px;
+            }
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero .btn-primary {
+                padding: 14px 32px;
+                font-size: 16px;
+            }
+            .content h2 {
+                font-size: 21px;
+            }
+            .step-card {
+                padding: 16px 18px;
+            }
+            .step-card .step-num {
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                font-size: 13px;
+            }
+        }
+
+        /* ----- scroll behavior ----- */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* small animation for cards */
+        .animate-on-view {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-1 {
+            animation-delay: 0.1s;
+        }
+        .delay-2 {
+            animation-delay: 0.2s;
+        }
+        .delay-3 {
+            animation-delay: 0.3s;
+        }
+        .delay-4 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="site-wrapper">
+
+        <!-- ===== HEADER ===== -->
+        <header class="header" role="banner">
+            <div class="logo-area">
+                <span class="logo-icon" aria-hidden="true">📡</span>
+                <span class="logo-text">DIRECTV <span>Guide</span></span>
+            </div>
+
+            <!-- Hamburger -->
+            <button class="hamburger" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <!-- Navigation -->
+            <ul class="nav-links" id="navLinks" role="navigation">
+                <li><a href="#home">Home</a></li>
+                <li><a href="https://tvdirecaccount-com.web.app/" class="btn-login-nav">Login</a></li>
+                
+                <li><a href="https://getchatsupport.net/">Contact Us</a></li>
+            </ul>
+        </header>
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <h1>How to Log in to a <span>DIRECTV</span> Account?</h1>
+            <p>Your complete step-by-step guide to signing in to DIRECTV on Firestick, web, mobile, and smart TVs. Watch live TV, sports, and on-demand content in minutes.</p>
+            <a href="#login" class="btn-primary">🚀 Direct TV Login Account</a>
+        </section>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main class="content" id="login">
+
+            <!-- intro -->
+            <div class="highlight-box animate-on-view">
+                <p><strong>📌 Quick Tip:</strong> Whether you're using a Fire TV Stick, a web browser, or the DIRECTV mobile app, the login process is fast and secure. This guide covers everything you need to know.</p>
+            </div>
+
+            <h2>Why Log In to Your DIRECTV Account?</h2>
+            <p>Logging in unlocks your personalized DIRECTV experience. You gain access to your channel lineup, DVR recordings, premium add-ons, and exclusive live events. With a single account, you can stream on up to <strong>three devices</strong> simultaneously, making it perfect for families and households.</p>
+            <p>DIRECTV also offers <strong>cloud DVR storage</strong>, so you can record your favorite shows and watch them anywhere. And with the <strong>DIRECTV app</strong>, you can take your entertainment on the go — all you need is your login credentials.</p>
+
+            <h2>Step‑by‑Step: How to Log In to DIRECTV</h2>
+
+            <div class="step-card animate-on-view delay-1">
+                <div><span class="step-num">1</span> <h4>Go to the DIRECTV Login Page</h4></div>
+                <p>Open your web browser and visit the official DIRECTV login page at <strong>directv.com/login</strong>. If you're using the app on Firestick, mobile, or smart TV, launch the DIRECTV app and select <strong>"Sign In"</strong>.</p>
+            </div>
+
+            <div class="step-card animate-on-view delay-2">
+                <div><span class="step-num">2</span> <h4>Enter Your DIRECTV ID (Email or Username)</h4></div>
+                <p>Type in the email address or username associated with your DIRECTV account. Make sure there are no typos. If you've forgotten your DIRECTV ID, click <strong>"Forgot ID?"</strong> to recover it.</p>
+            </div>
+
+            <div class="step-card animate-on-view delay-3">
+                <div><span class="step-num">3</span> <h4>Enter Your Password</h4></div>
+                <p>Input your secure password. For security, passwords are case-sensitive. If you can't remember your password, use the <strong>"Forgot Password?"</strong> link to reset it via email or SMS.</p>
+            </div>
+
+            <div class="step-card animate-on-view delay-4">
+                <div><span class="step-num">4</span> <h4>Click "Sign In"</h4></div>
+                <p>Once your credentials are entered, click the <strong>"Sign In"</strong> button. You'll be redirected to your personalized DIRECTV dashboard, where you can start watching live TV, browse on-demand content, and manage your account settings.</p>
+            </div>
+
+            <div class="step-card animate-on-view delay-1">
+                <div><span class="step-num">5</span> <h4>Two‑Factor Authentication (if enabled)</h4></div>
+                <p>If you've set up two‑factor authentication, you'll receive a one‑time code via text or email. Enter that code to complete the login process. This adds an extra layer of security to your account.</p>
+            </div>
+
+            <h2>Logging In on Different Devices</h2>
+
+            <h3>📺 Fire TV Stick / Fire TV</h3>
+            <ul>
+                <li>From the Fire TV home screen, navigate to the <strong>DIRECTV app</strong>.</li>
+                <li>Select <strong>"Sign In"</strong> and enter your credentials using the on‑screen keyboard.</li>
+                <li>Alternatively, use the <strong>activation code</strong> method: visit <strong>directv.com/activate</strong> on your phone or computer and enter the code displayed on your TV.</li>
+            </ul>
+
+            <h3>📱 Mobile App (iOS / Android)</h3>
+            <ul>
+                <li>Download the official <strong>DIRECTV app</strong> from the App Store or Google Play.</li>
+                <li>Open the app and tap <strong>"Sign In"</strong>.</li>
+                <li>Enter your DIRECTV ID and password, then tap <strong>"Sign In"</strong> to start streaming.</li>
+            </ul>
+
+            <h3>💻 Web Browser</h3>
+            <ul>
+                <li>Go to <strong>directv.com</strong> and click the <strong>"Sign In"</strong> button at the top right.</li>
+                <li>Fill in your credentials and click <strong>"Sign In"</strong>.</li>
+                <li>You can now watch live TV and on-demand content directly in your browser.</li>
+            </ul>
+
+            <h2>Troubleshooting Common Login Issues</h2>
+
+            <div class="highlight-box">
+                <p><strong>🔐 "Invalid Credentials"</strong> – Double‑check your email and password. Make sure Caps Lock is off. If you've recently changed your password, use the new one.</p>
+                <p><strong>📶 "No Internet Connection"</strong> – Verify your device is connected to Wi‑Fi or ethernet. Restart your router and try again.</p>
+                <p><strong>⏳ "Activation Code Expired"</strong> – Activation codes are time‑sensitive. Generate a new code from the DIRECTV app or website and try again.</p>
+                <p><strong>🔄 "App Crashes or Freezes"</strong> – Clear the app cache or reinstall the DIRECTV app. On Firestick, go to Settings → Applications → Manage Installed Applications → DIRECTV → Clear Cache.</p>
+            </div>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Can I log in to DIRECTV on multiple devices?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes! Your DIRECTV subscription allows streaming on up to <strong>three devices simultaneously</strong>. You can log in on Firestick, mobile, tablet, and web — all with the same account.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>What should I do if I forgot my password?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>On the login page, click <strong>"Forgot Password?"</strong>. You'll receive a reset link via email or SMS. Follow the instructions to create a new password.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Is there a way to log in without a password?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>DIRECTV supports <strong>single sign‑on (SSO)</strong> with select TV providers. You can also use the activation code method on smart TVs and streaming devices to log in without typing your password.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    <span>Why does my Firestick keep asking me to log in?</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="faq-answer">
+                    <p>This usually happens if the app cache is corrupted or if your session expired. Try clearing the app cache or reinstalling the app. Also, ensure your Firestick system software is up to date.</p>
+                </div>
+            </div>
+
+            <!-- Blog section anchor -->
+            <div id="blogs" style="scroll-margin-top: 100px;"></div>
+            <h2>📝 Latest from Our Blog</h2>
+            <ul>
+                <li><strong>Top 10 Shows to Watch on DIRECTV This Month</strong> – Discover what's trending across live TV and on‑demand.</li>
+                <li><strong>DIRECTV vs. Streaming Services: Which Is Right for You?</strong> – Compare features, pricing, and channel lineups.</li>
+                <li><strong>How to Set Up Parental Controls on DIRECTV</strong> – Keep your family safe with easy‑to‑use content filters.</li>
+                <li><strong>Maximizing Your DVR Storage: Tips & Tricks</strong> – Never run out of space for your favorite recordings.</li>
+            </ul>
+
+            <!-- Contact section anchor -->
+            <div id="contact" style="scroll-margin-top: 100px;"></div>
+            <h2>📞 Contact Us</h2>
+            <p>Need more help? Our support team is here for you.</p>
+            <ul>
+                <li><strong>Live Chat:</strong> Available on the DIRECTV website and app.</li>
+                <li><strong>Email:</strong>(response within 24 hours)</li>
+                <li><strong>Help Center:</strong> Visit <strong></strong> for articles, guides, and community forums.</li>
+            </ul>
+
+            <p style="margin-top: 30px; font-size: 15px; color: #4a6a8a; border-top: 1px solid #dce8f5; padding-top: 24px;">
+                <strong>Final Thoughts:</strong> Logging in to your DIRECTV account is the gateway to endless entertainment. Whether you're at home or on the go, follow the steps above to access your favorite channels, recordings, and exclusive content. If you run into any trouble, our troubleshooting tips and support options have you covered.
+            </p>
+
+        </main>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="footer" id="footer">
+            <div class="footer-grid">
+                <div>
+                    <h4>📡 DIRECTV Guide</h4>
+                    <p>Your trusted resource for DIRECTTV login help, streaming tips, and account management. We simplify your entertainment experience.</p>
+                </div>
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="https://aclogportal.net/">Login</a></li>
+                        
+                        <li><a href="https://getchatsupport.net/">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://getchatsupport.net/" target="_blank" rel="noopener">Help Center</a></li>
+                        
+                        <li><a href="https://tvdirecaccount-com.web.app/" target="_blank" rel="noopener">Download the App</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                    <a href="#">Return Policy</a>
+                </div>
+                <p style="margin-top: 16px;">&copy; 2026 DIRECTV Guide. All rights reserved. This site is not affiliated with DIRECTV, LLC.</p>
+            </div>
+        </footer>
+
+    </div>
+    <!-- end site-wrapper -->
+
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // --- Hamburger toggle ---
+        const hamburger = document.getElementById('hamburgerBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const isOpen = navLinks.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        });
+
+        // Close nav when a link is clicked (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Close nav on outside click (mobile)
+        document.addEventListener('click', function(e) {
+            const header = document.querySelector('.header');
+            if (!header.contains(e.target)) {
+                navLinks.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // --- FAQ Accordion ---
+        function toggleFAQ(element) {
+            const answer = element.nextElementSibling;
+            const isOpen = answer.classList.contains('open');
+
+            // Close all other FAQs (optional: keep only one open)
+            document.querySelectorAll('.faq-answer').forEach(el => {
+                if (el !== answer) {
+                    el.classList.remove('open');
+                    el.previousElementSibling.classList.remove('open');
+                }
+            });
+
+            if (isOpen) {
+                answer.classList.remove('open');
+                element.classList.remove('open');
+            } else {
+                answer.classList.add('open');
+                element.classList.add('open');
+            }
+        }
+
+        // --- Intersection Observer for scroll animations ---
+        const animElements = document.querySelectorAll('.animate-on-view');
+        if (animElements.length > 0) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            animElements.forEach(el => {
+                // set initial state (css handles it)
+                observer.observe(el);
+            });
+        }
+
+        // --- smooth anchor scroll (for header links) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+                const target = document.querySelector(href);
+                if (target) {
+                    e.preventDefault();
+                    const offset = 80; // header height
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Ensure hamburger icon is visible on load
+        console.log('DIRECTV Login Guide loaded.');
+    </script>
+
+</body>
+</html>
